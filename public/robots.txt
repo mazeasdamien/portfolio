@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mazeasdamien.github.io/My-portfolio/sitemap.xml

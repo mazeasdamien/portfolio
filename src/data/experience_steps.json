@@ -1,0 +1,201 @@
+[
+    {
+        "id": "exp-master",
+        "type": "education",
+        "title": "M.Sc. in Digital Engineering",
+        "organization": "Arts et Métiers Institute of Technology",
+        "location": "France",
+        "startDate": "2017-09-01",
+        "endDate": "2019-09-01",
+        "description": "Master's thesis focused on the development of a VR interface for industrial design prototyping.",
+        "researchInterests": [
+            "VR",
+            "Digital Engineering",
+            "Prototyping"
+        ],
+        "publications": [],
+        "teaching": [],
+        "projects": [
+            {
+                "id": "project-vr-prototyping",
+                "title": "VR Application for Immersive Prototyping",
+                "url": "/project/vr-prototyping",
+                "thumbnail": "/images/portfolio/thumbnails/VR Application for Immersive Prototyping hover.webp"
+            }
+        ],
+        "logo": "/images/logos/artsetmetiers.svg"
+    },
+    {
+        "id": "exp-tumcreate",
+        "type": "education",
+        "title": "Research Assistant",
+        "organization": "TUMCREATE",
+        "location": "Singapore",
+        "startDate": "2019-02-01",
+        "endDate": "2019-08-01",
+        "description": "Research on VR applications for industrial design prototyping.",
+        "researchInterests": [
+            "VR Prototyping",
+            "Industrial Design",
+            "HCI"
+        ],
+        "publications": [],
+        "teaching": [],
+        "projects": [],
+        "logo": "/images/logos/tumcreate.webp"
+    },
+    {
+        "id": "exp-cranfield",
+        "type": "education",
+        "title": "PhD in Robotic Telepresence (Telexistence)",
+        "organization": "Cranfield University",
+        "location": "Cranfield, UK",
+        "startDate": "2020-09-28",
+        "endDate": "2024-04-01",
+        "description": "PhD research on immersive remote maintenance and telexistence. Developed VR interfaces for industrial robot control. Certified in FANUC Teach Pendant Programming (Sept 2021).",
+        "sponsor": "Sponsor: Ministry of Defence (Dstl)",
+        "researchInterests": [
+            "Telexistence",
+            "Industrial Robotics",
+            "VR/AR",
+            "Remote Maintenance"
+        ],
+        "publications": [
+            {
+                "id": "pub-phd-thesis",
+                "title": "Key principles for assessing and implementing remote in-spection with telexistence capability",
+                "date": "2023-12-01",
+                "venue": "PhD Thesis, Cranfield University",
+                "description": "Establishes a framework of principles for implementing telexistence in industrial inspection, focusing on human factors and system requirements."
+            },
+            {
+                "id": "pub-remote-collab",
+                "title": "Designing Immersive Tools for Expert and Worker Remote Collaboration",
+                "date": "2024-08-01",
+                "venue": "34th CIRP Design Conference",
+                "description": "Explores the design of AR/VR tools that facilitate real-time collaboration between remote experts and on-site workers for maintenance tasks."
+            },
+            {
+                "id": "pub-marine",
+                "title": "Telexistence-based remote maintenance for marine engineers",
+                "date": "2023-05-01",
+                "venue": "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+                "description": "Presents a telexistence system designed to allow marine engineers to perform remote maintenance on ships using immersive interfaces."
+            },
+            {
+                "id": "pub-telexistence",
+                "title": "A telexistence interface for remote control of a physical industrial robot via data distribution service",
+                "date": "2023-02-01",
+                "venue": "IFIP International Conference on Product Lifecycle Management",
+                "description": "Develops a low-latency telexistence interface using DDS to enable precise remote control of physical industrial robots through VR."
+            },
+            {
+                "id": "pub-impro",
+                "title": "ImPro: Immersive Prototyping in Virtual Environments for Industrial Designers",
+                "date": "2020-06-01",
+                "venue": "International Design Conference",
+                "description": "Introduces 'ImPro', a VR application that allows industrial designers to prototype and evaluate concepts in a fully immersive digital environment."
+            }
+        ],
+        "projects": [
+            {
+                "id": "project-remote-collab",
+                "title": "Expert and Worker Remote Collaboration",
+                "url": "/project/remote-collab",
+                "thumbnail": "/images/portfolio/thumbnails/Expert and Worker Remote Collaboration hover.webp"
+            },
+            {
+                "id": "project-remote-maint",
+                "title": "Immersive Remote Maintenance",
+                "url": "/project/remote-maintenance",
+                "thumbnail": "/images/portfolio/thumbnails/Telexistence for Remote Marine Maintenance hover.webp"
+            }
+        ],
+        "logo": "/images/logos/cranfield.webp"
+    },
+    {
+        "id": "exp-cnrs",
+        "type": "employment",
+        "title": "Research Associate",
+        "organization": "CNRS@Create",
+        "location": "Singapore",
+        "startDate": "2023-10-01",
+        "endDate": "2024-09-30",
+        "description": "Conducted rigorous empirical HRI user studies investigating the impact of exocentric visual aids on operator visuomotor expertise and situation representation in virtual spaces. Uncovered critical preference-performance dissociations via eye tracking and NASA-TLX workload modeling.",
+        "researchInterests": [
+            "Human-AI Collaboration",
+            "Hybrid Intelligence",
+            "Adaptive Interfaces"
+        ],
+        "publications": [],
+        "projects": [],
+        "logo": "/images/logos/cnrs.png"
+    },
+    {
+        "id": "exp-bnbu",
+        "type": "employment",
+        "title": "Lecturer",
+        "organization": "BNBU",
+        "location": "Zhuhai, China",
+        "startDate": "2024-09-01",
+        "endDate": "2025-06-30",
+        "description": "",
+        "researchInterests": [
+            "Human Computer Interaction",
+            "AI Education"
+        ],
+        "publications": [
+            {
+                "id": "pub-vis-modalities",
+                "title": "Study of Visualization Modalities on Industrial Robot Teleoperation for Inspection in a Virtual Co-Existence Space",
+                "date": "2025-04-01",
+                "venue": "MDPI Virtual Worlds",
+                "description": "Evaluates how different visual feedback methods in VR affect operator performance and spatial awareness during remote industrial robot inspection."
+            }
+        ],
+        "teaching": [
+            "AI3153 Human Computer Interaction (Designed & Taught)",
+            "GCAP3123 Computer Technology and AI Project",
+            "GTSC2093 IT for Success in Everyday Life"
+        ],
+        "projects": [
+            {
+                "id": "project-vis-modalities",
+                "title": "Visualization Modalities for Teleoperation",
+                "url": "/project/visualization-modalities",
+                "thumbnail": "/images/portfolio/thumbnails/Study of Visualization Modalities hover.webp"
+            },
+            {
+                "id": "project-hci-course",
+                "title": "Human Computer Interaction Course",
+                "url": "/project/hci-course"
+            }
+        ],
+        "logo": "/images/logos/bnbu.webp"
+    },
+    {
+        "id": "exp-orange",
+        "type": "employment",
+        "title": "R&D Research Scientist",
+        "organization": "Orange Innovation",
+        "location": "Rennes, France",
+        "startDate": "2026-01-01",
+        "endDate": null,
+        "description": "Engineered a hierarchical Vision-Language-Model (VLM/LLM) digital twin framework to translate natural language prompts into expressive robotic trajectories. Focus on the [5GMetaverse project](https://5gmetaverse.wp.imt.fr/).",
+        "researchInterests": [
+            "Social XR",
+            "Industrial Metaverse",
+            "Human AI collaboration"
+        ],
+        "publications": [],
+        "projects": [
+            {
+                "id": "project-5gmetaverse",
+                "title": "5GMetaverse Project",
+                "url": "https://5gmetaverse.wp.imt.fr/",
+                "thumbnail": "/images/portfolio/thumbnails/5GMetavers.png"
+            }
+        ],
+        "logo": "/images/logos/Orange.webp"
+    }
+]

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJN8XP141X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-FJN8XP141X');
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/webp" href="/favicon.webp?v=2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Damien Mazeas</title>
+  <meta name="description"
+    content="Damien Mazeas - R&D Researcher in Human-Machine Interaction, specializing in Industrial Metaverse, VR/AR, and Human-AI Collaboration at Orange.">
+  <meta name="keywords"
+    content="Damien Mazeas, PhD, Researcher, Human-Machine Interaction, HCI, VR, AR, Metaverse, Industrial Metaverse, Orange, Cranfield University">
+  <meta property="og:title" content="Damien Mazeas - R&D Researcher in HCI" />
+  <meta property="og:description"
+    content="Portfolio of Damien Mazeas, PhD. Explore research in Industrial Metaverse, 5G Networks, and Immersive Technologies." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mazeas.com/" />
+  <meta property="og:image" content="/images/profil.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <script type="text/javascript">
+    (function (l) {
+      // Redirect /index.html to /
+      if (l.pathname.endsWith('/index.html')) {
+        window.history.replaceState(null, null, l.pathname.replace(/\/index\.html$/, '/'));
+      }
+      var q = l.search;
+      if (q[1] === '/' || q.indexOf('?p=') === 0) {
+        var path = q.indexOf('?p=') === 0 ? q.slice(3) : q.slice(1);
+        var decoded = path.split('&').map(function (s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

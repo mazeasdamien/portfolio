@@ -1,0 +1,367 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Enable elastic scrolling with visible background */
+html {
+  min-height: 100%;
+  overscroll-behavior-y: auto;
+  background-color: #fafafa;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+}
+
+/* Dark mode support for html background */
+html.dark {
+  background-color: #fafafa;
+}
+
+@keyframes glow-move {
+  0% {
+    background-position: 0% 0%, 100% 0%;
+  }
+
+  100% {
+    background-position: 100% 100%, 0% 100%;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overscroll-behavior-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+@keyframes soft-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-soft-float {
+  animation: soft-float 3s ease-in-out infinite;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+@keyframes funny-wobble {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+
+  50% {
+    transform: scale(0.9) rotate(5deg);
+  }
+
+  75% {
+    transform: scale(1.05) rotate(-3deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.group-hover\:animate-funny-wobble:hover img,
+.group:hover .animate-funny-wobble {
+  animation: funny-wobble 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes star-move {
+  0% {
+    left: -10%;
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  5% {
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+
+  15% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(2.5);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(3.5);
+  }
+
+  95% {
+    opacity: 0.3;
+    transform: scale(4);
+  }
+
+  100% {
+    left: 110%;
+    opacity: 0;
+    transform: scale(4);
+  }
+}
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes star-move-vertical {
+  0% {
+    top: -10%;
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  5% {
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+
+  15% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(2.5);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(3.5);
+  }
+
+  95% {
+    opacity: 0.3;
+    transform: scale(4);
+  }
+
+  100% {
+    top: 110%;
+    opacity: 0;
+    transform: scale(4);
+  }
+}
+
+@keyframes beam-pulse {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 0.3;
+  }
+
+  15% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  85% {
+    opacity: 0.8;
+  }
+
+  95% {
+    opacity: 0.3;
+  }
+}
+
+
+@keyframes star-reveal {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes cross-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(80);
+  }
+}
+
+@keyframes beam-pulse {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 0.3;
+  }
+
+  15% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  85% {
+    opacity: 0.8;
+  }
+
+  95% {
+    opacity: 0.3;
+  }
+}
+
+
+
+.corner-cross svg {
+  vector-effect: non-scaling-stroke;
+}
+
+
+.thin-cross {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.thin-cross::before,
+.thin-cross::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+}
+
+.thin-cross::before {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 0.05px;
+  transform: translateX(-50%);
+}
+
+.thin-cross::after {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 0.05px;
+  transform: translateY(-50%);
+}
+
+/* Custom Scrollbar Styles for Publications */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(229, 229, 229, 0.2);
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(161, 161, 170, 0.3);
+  /* zinc-400 */
+  border-radius: 3px;
+}
+
+.scrollbar-thin:hover::-webkit-scrollbar-thumb {
+  background: rgba(161, 161, 170, 0.5);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
