@@ -1,7 +1,6 @@
 # Damien Mazeas Portfolio
 
 Personal portfolio website built with Vite + React.
-
 ## Deployment
 
 The project is configured to deploy via **GitHub Actions** to GitHub Pages whenever changes are pushed to the `master` branch.
