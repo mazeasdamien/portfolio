@@ -121,7 +121,12 @@
         "location": "Zhuhai, China",
         "startDate": "2024-09-01",
         "endDate": "2025-06-30",
-        "description": "• Course Design: Created and taught the Human-Computer Interaction syllabus.\n• Teaching: 135h per semester. Topics: HCI, General IT, Computer Technology & AI projects.\n• Research outputs: 2 journal articles (Elsevier Computer & Education: X Reality, MDPI Virtual Worlds).",
+        "description": "",
+        "highlights": [
+            "Course Design: Created and taught the Human-Computer Interaction syllabus.",
+            "Teaching: 135h per semester. Topics: HCI, General IT, Computer Technology & AI projects.",
+            "Research outputs: 1 journal article (MDPI Virtual Worlds)."
+        ],
         "researchInterests": [
             "Human Computer Interaction",
             "AI Education"
@@ -134,11 +139,6 @@
                 "venue": "MDPI Virtual Worlds",
                 "description": "Evaluates how different visual feedback methods in VR affect operator performance and spatial awareness during remote industrial robot inspection."
             }
-        ],
-        "teaching": [
-            "AI3153 Human Computer Interaction (Designed & Taught)",
-            "GCAP3123 Computer Technology and AI Project",
-            "GTSC2093 IT for Success in Everyday Life"
         ],
         "projects": [
             {

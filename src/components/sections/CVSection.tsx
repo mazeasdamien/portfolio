@@ -24,6 +24,7 @@ interface ExperienceStep {
     researchInterests: string[];
     projects?: Project[];
     teaching?: string[];
+    highlights?: string[];
     sponsor?: string;
     logo: string;
 }
@@ -107,25 +108,41 @@ const ExperienceNode: React.FC<{ step: ExperienceStep; index: number }> = ({ ste
                     </div>
                 </div>
 
-                <p className="text-sm text-neutral-700 leading-relaxed mb-4">
-                    {step.description.split(/(\[.*?\]\(.*?\))/g).map((part, index) => {
-                        const match = part.match(/\[(.*?)\]\((.*?)\)/);
-                        if (match) {
-                            return (
-                                <a
-                                    key={index}
-                                    href={match[2]}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-300 underline-offset-2 transition-colors"
-                                >
-                                    {match[1]}
-                                </a>
-                            );
-                        }
-                        return <React.Fragment key={index}>{part}</React.Fragment>;
-                    })}
-                </p>
+                {step.description && (
+                    <p className="text-sm text-neutral-700 leading-relaxed mb-4">
+                        {step.description.split(/(\[.*?\]\(.*?\))/g).map((part, index) => {
+                            const match = part.match(/\[(.*?)\]\((.*?)\)/);
+                            if (match) {
+                                return (
+                                    <a
+                                        key={index}
+                                        href={match[2]}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-600 hover:text-blue-700 font-medium underline decoration-blue-300 underline-offset-2 transition-colors"
+                                    >
+                                        {match[1]}
+                                    </a>
+                                );
+                            }
+                            return <React.Fragment key={index}>{part}</React.Fragment>;
+                        })}
+                    </p>
+                )}
+
+                {/* Highlights Listing */}
+                {(step.highlights && step.highlights.length > 0) && (
+                    <div className="mb-4">
+                        <ul className="grid grid-cols-1 gap-y-2">
+                            {step.highlights.map((item, i) => (
+                                <li key={i} className="text-sm text-neutral-700 flex items-start gap-2 font-normal">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0 mt-1.5" />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
 
                 {step.sponsor && (
                     <div className="mb-4 text-xs font-medium text-neutral-500">
