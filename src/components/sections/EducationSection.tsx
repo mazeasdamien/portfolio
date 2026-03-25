@@ -22,7 +22,7 @@ export const EducationSection: React.FC = () => {
                             <p className="text-[10px] font-black text-blue-400 uppercase tracking-[0.2em] leading-none mb-1.5">Cranfield University</p>
                             <h4 className="text-sm font-bold text-neutral-900 leading-tight">Ph.D. in Robotic Telexistence for Maintenance</h4>
                             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 text-[11px] text-neutral-500 font-medium">
-                                <span>April 2024</span>
+                                <span>Awarded April 2024</span>
                             </div>
                         </div>
                     </div>
@@ -38,7 +38,7 @@ export const EducationSection: React.FC = () => {
                             <p className="text-[10px] font-black text-indigo-400 uppercase tracking-[0.2em] leading-none mb-1.5">Arts et Métiers</p>
                             <h4 className="text-sm font-bold text-neutral-900 leading-tight">M.Sc. in 3D Immersive Technologies</h4>
                             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 text-[11px] text-neutral-500 font-medium">
-                                <span>Sept 2019</span>
+                                <span>Awarded September 2019</span>
                             </div>
                         </div>
                     </div>
