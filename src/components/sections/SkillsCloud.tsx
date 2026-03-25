@@ -9,10 +9,7 @@ import {
     Share2,
     Layers,
     Box,
-    Bot,
     BrainCircuit,
-    ShieldCheck,
-    Eye,
     Network
 } from 'lucide-react';
 
@@ -21,11 +18,9 @@ const SKILLS = [
     { name: 'Human-Robot Interaction', icon: Share2, color: 'text-blue-600' },
     { name: 'Vision-Language-Action (VLA)', icon: Zap, color: 'text-sky-500' },
     { name: 'Semantic-to-Motion', icon: MessageSquare, color: 'text-indigo-500' },
-    { name: 'Telexistence', icon: Eye, color: 'text-sky-600' },
     { name: 'Digital Twins', icon: Layers, color: 'text-blue-500' },
     { name: 'Spatial Computing', icon: Box, color: 'text-indigo-400' },
     { name: 'ROS / DDS', icon: Cpu, color: 'text-slate-600' },
-    { name: 'Cognitive Safety', icon: ShieldCheck, color: 'text-indigo-700' },
     { name: 'Human-in-the-Loop', icon: MousePointer2, color: 'text-blue-700' },
     { name: 'PyTorch & TensorFlow', icon: Network, color: 'text-sky-700' },
     { name: 'Unity 3D / C#', icon: Code2, color: 'text-blue-400' },
@@ -34,7 +29,7 @@ const SKILLS = [
 export const SkillsCloud: React.FC = () => {
     return (
         <div className="w-full mb-2 py-2" style={{ perspective: '1200px' }}>
-            <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto px-4">
+            <div className="flex flex-wrap justify-center gap-3 max-w-6xl mx-auto px-4">
                 {SKILLS.map((skill, index) => (
                     <motion.div
                         key={skill.name}

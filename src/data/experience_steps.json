@@ -2,7 +2,7 @@
     {
         "id": "exp-master",
         "type": "education",
-        "title": "M.Sc. in Digital Engineering",
+        "title": "M.Sc. in 3D Immersive Technologies",
         "organization": "Arts et Métiers Institute of Technology",
         "location": "France",
         "startDate": "2017-09-01",
@@ -47,7 +47,7 @@
     {
         "id": "exp-cranfield",
         "type": "education",
-        "title": "PhD in Robotic Telepresence (Telexistence)",
+        "title": "PhD in Robotic Telexistence for Maintenance",
         "organization": "Cranfield University",
         "location": "Cranfield, UK",
         "startDate": "2020-09-28",
@@ -112,24 +112,6 @@
             }
         ],
         "logo": "/images/logos/cranfield.webp"
-    },
-    {
-        "id": "exp-cnrs",
-        "type": "employment",
-        "title": "Research Associate",
-        "organization": "CNRS@Create",
-        "location": "Singapore",
-        "startDate": "2023-10-01",
-        "endDate": "2024-09-30",
-        "description": "Conducted rigorous empirical HRI user studies investigating the impact of exocentric visual aids on operator visuomotor expertise and situation representation in virtual spaces. Uncovered critical preference-performance dissociations via eye tracking and NASA-TLX workload modeling.",
-        "researchInterests": [
-            "Human-AI Collaboration",
-            "Hybrid Intelligence",
-            "Adaptive Interfaces"
-        ],
-        "publications": [],
-        "projects": [],
-        "logo": "/images/logos/cnrs.png"
     },
     {
         "id": "exp-bnbu",
