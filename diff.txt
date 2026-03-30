@@ -1,0 +1,53 @@
+commit 2061b2cb4aec93dbcd2f3d8f42cf216000b2228d
+Author: Damien Mazeas <58029218+mazeasdamien@users.noreply.github.com>
+Date:   Wed Mar 25 10:32:56 2026 +0100
+
+    feat: add Education and SkillsCloud sections, update experience data, and refine README content by removing old entries and updating education details.
+
+diff --git a/src/data/experience_steps.json b/src/data/experience_steps.json
+index 57c8a48..268b744 100644
+--- a/src/data/experience_steps.json
++++ b/src/data/experience_steps.json
+@@ -2,7 +2,7 @@
+     {
+         "id": "exp-master",
+         "type": "education",
+-        "title": "M.Sc. in Digital Engineering",
++        "title": "M.Sc. in 3D Immersive Technologies",
+         "organization": "Arts et Métiers Institute of Technology",
+         "location": "France",
+         "startDate": "2017-09-01",
+@@ -47,7 +47,7 @@
+     {
+         "id": "exp-cranfield",
+         "type": "education",
+-        "title": "PhD in Robotic Telepresence (Telexistence)",
++        "title": "PhD in Robotic Telexistence for Maintenance",
+         "organization": "Cranfield University",
+         "location": "Cranfield, UK",
+         "startDate": "2020-09-28",
+@@ -113,24 +113,6 @@
+         ],
+         "logo": "/images/logos/cranfield.webp"
+     },
+-    {
+-        "id": "exp-cnrs",
+-        "type": "employment",
+-        "title": "Research Associate",
+-        "organization": "CNRS@Create",
+-        "location": "Singapore",
+-        "startDate": "2023-10-01",
+-        "endDate": "2024-09-30",
+-        "description": "Conducted rigorous empirical HRI user studies investigating the impact of exocentric visual aids on operator visuomotor expertise and situation representation in virtual spaces. Uncovered critical preference-performance dissociations via eye tracking and NASA-TLX workload modeling.",
+-        "researchInterests": [
+-            "Human-AI Collaboration",
+-            "Hybrid Intelligence",
+-            "Adaptive Interfaces"
+-        ],
+-        "publications": [],
+-        "projects": [],
+-        "logo": "/images/logos/cnrs.png"
+-    },
+     {
+         "id": "exp-bnbu",
+         "type": "employment",

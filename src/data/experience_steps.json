@@ -114,6 +114,23 @@
         "logo": "/images/logos/cranfield.webp"
     },
     {
+        "id": "exp-cnrs",
+        "type": "employment",
+        "title": "Research Associate",
+        "organization": "CNRS@Create",
+        "location": "Singapore",
+        "startDate": "2023-10-01",
+        "endDate": "2024-09-30",
+        "researchInterests": [
+            "User Interface Design",
+            "Human Factors",
+            "Pupillometry"
+        ],
+        "publications": [],
+        "projects": [],
+        "logo": "/images/logos/cnrs.png"
+    },
+    {
         "id": "exp-bnbu",
         "type": "employment",
         "title": "Lecturer",
