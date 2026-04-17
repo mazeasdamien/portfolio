@@ -3,7 +3,7 @@
         "id": "exp-master",
         "type": "education",
         "title": "M.Sc. in 3D Immersive Technologies",
-        "organization": "Arts et Métiers Institute of Technology",
+        "organization": "Arts et Métiers",
         "location": "France",
         "startDate": "2017-09-01",
         "endDate": "2019-09-01",
@@ -25,15 +25,16 @@
         ],
         "logo": "/images/logos/artsetmetiers.svg"
     },
+
     {
         "id": "exp-tumcreate",
-        "type": "education",
+        "type": "employment",
         "title": "Research Assistant",
         "organization": "TUMCREATE",
         "location": "Singapore",
         "startDate": "2019-02-01",
         "endDate": "2019-08-01",
-        "description": "Research on VR applications for industrial design prototyping.",
+        "description": "Conducted applied research on VR immersive prototyping tools for industrial designers.",
         "researchInterests": [
             "VR Prototyping",
             "Industrial Design",
@@ -42,7 +43,7 @@
         "publications": [],
         "teaching": [],
         "projects": [],
-        "logo": "/images/logos/tumcreate.webp"
+        "logo": "/images/logos/tumcreate.png"
     },
     {
         "id": "exp-cranfield",
@@ -63,7 +64,7 @@
         "publications": [
             {
                 "id": "pub-phd-thesis",
-                "title": "Key principles for assessing and implementing remote in-spection with telexistence capability",
+                "title": "Key principles for assessing and implementing remote inspection with telexistence capability",
                 "date": "2023-12-01",
                 "venue": "PhD Thesis, Cranfield University",
                 "description": "Establishes a framework of principles for implementing telexistence in industrial inspection, focusing on human factors and system requirements."
@@ -121,6 +122,7 @@
         "location": "Singapore",
         "startDate": "2023-10-01",
         "endDate": "2024-09-30",
+        "description": "Cognitive Ergonomics & Eye-Tracking: Conducted rigorous empirical user studies (N=30) investigating the impact of exocentric visual aids on operator visuomotor expertise, uncovering critical preference-performance dissociations via physiological sensing (Tobii eye-tracking, pupillometry) and NASA-TLX.",
         "researchInterests": [
             "User Interface Design",
             "Human Factors",
@@ -133,7 +135,7 @@
     {
         "id": "exp-bnbu",
         "type": "employment",
-        "title": "Lecturer",
+        "title": "Lecturer in Human-Computer Interaction",
         "organization": "BNBU",
         "location": "Zhuhai, China",
         "startDate": "2024-09-01",
@@ -141,8 +143,7 @@
         "description": "",
         "highlights": [
             "Course Design: Created and taught the Human-Computer Interaction syllabus.",
-            "Teaching: 135h per semester. Topics: HCI, General IT, Computer Technology & AI projects.",
-            "Research outputs: 1 journal article (MDPI Virtual Worlds)."
+            "Teaching: 135h per semester. Topics: HCI, General IT, Computer Technology & AI projects."
         ],
         "researchInterests": [
             "Human Computer Interaction",
@@ -181,6 +182,9 @@
         "startDate": "2026-01-01",
         "endDate": null,
         "description": "Engineered a hierarchical Vision-Language-Model (VLM/LLM) digital twin framework to translate natural language prompts into expressive robotic trajectories. Focus on the [5GMetaverse project](https://5gmetaverse.wp.imt.fr/).",
+        "highlights": [
+            "Co-authored 1 patent."
+        ],
         "researchInterests": [
             "Social XR",
             "Industrial Metaverse",

@@ -15,6 +15,24 @@ interface Experiment {
 
 const EXPERIMENTS: Experiment[] = [
     {
+        id: 'yt-Z_F308DV2rU',
+        title: 'Semantic-to-Motion Digital Twin Framework',
+        description: 'A hierarchical framework translating natural language prompts into expressive robotic trajectories using Vision-Language Models.',
+        gifUrl: 'https://i.ytimg.com/vi/Z_F308DV2rU/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/Z_F308DV2rU',
+        tags: ['Digital Twin', 'Robotics', 'AI', 'LLM'],
+        date: '2026-04-01'
+    },
+    {
+        id: 'yt-KQpWBGlAK90',
+        title: 'Physics Simulation Unity 3D',
+        description: 'An elastic grid simulation built in Unity 3D exploring real-time physics interactions.',
+        gifUrl: '/Prototypes/elastic grid 2.gif',
+        youtubeUrl: 'https://youtu.be/KQpWBGlAK90',
+        tags: ['Unity 3D', 'Physics', 'Simulation'],
+        date: '2026-03-20'
+    },
+    {
         id: 'exp-elastic-grid',
         title: 'Elastic Grid',
         description: 'An interactive elastic grid prototype in Unity 3D.',
@@ -32,14 +50,124 @@ const EXPERIMENTS: Experiment[] = [
         date: '2026-03-15'
     },
     {
-        id: 'exp-elastic-grid-2',
-        title: 'Elastic Grid',
-        description: 'Interactive elastic grid prototype.',
-        gifUrl: '/Prototypes/elastic grid 2.gif',
-        tags: ['Prototype', 'Interaction', 'Unity 3D'],
-        date: '2026-03-20'
+        id: 'yt-aGiFJXDC3IA',
+        title: 'Quest 3 Mixed Reality: Dual Niryo Robot Control',
+        description: 'Remotely controlling two Niryo Ned robotic arms simultaneously using the Meta Quest 3 in Mixed Reality.',
+        gifUrl: 'https://i.ytimg.com/vi/aGiFJXDC3IA/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/aGiFJXDC3IA',
+        tags: ['Mixed Reality', 'Robotics', 'Quest 3', 'Teleoperation'],
+        date: '2026-03-03'
+    },
+    {
+        id: 'yt-h7QRFDIivqA',
+        title: 'Universal Robots in Unity: IK Setup',
+        description: 'Setting up Inverse Kinematics for Universal Robots UR8/UR15 in Unity 3D with a live WebGL demo.',
+        gifUrl: 'https://i.ytimg.com/vi/h7QRFDIivqA/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/h7QRFDIivqA',
+        tags: ['Unity 3D', 'Robotics', 'Inverse Kinematics', 'WebGL'],
+        date: '2025-10-10'
+    },
+    {
+        id: 'yt-FDd-eLMpXmE',
+        title: 'Blender: Unparent Without Moving',
+        description: 'Quick Blender tip — how to unparent objects the right way while keeping their world transformation.',
+        gifUrl: 'https://i.ytimg.com/vi/FDd-eLMpXmE/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/FDd-eLMpXmE',
+        tags: ['Blender', 'Tutorial', '3D'],
+        date: '2025-10-10'
+    },
+    {
+        id: 'yt-Yl22YEUcAQw',
+        title: 'Fix Unity 6 Scene Lag & Stuttering',
+        description: 'A fix for poor performance, lag, and stuttering in Unity 6 projects using the DirectX 12 graphics API.',
+        gifUrl: 'https://i.ytimg.com/vi/Yl22YEUcAQw/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/Yl22YEUcAQw',
+        tags: ['Unity 3D', 'Tutorial', 'Performance'],
+        date: '2025-09-30'
+    },
+    {
+        id: 'yt-SFfLPbs9-ws',
+        title: 'FANUC Pick and Place',
+        description: 'Demonstration of a FANUC industrial robot performing a pick and place task.',
+        gifUrl: 'https://i.ytimg.com/vi/SFfLPbs9-ws/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/SFfLPbs9-ws',
+        tags: ['Robotics', 'FANUC', 'Industrial'],
+        date: '2025-09-05'
+    },
+    {
+        id: 'yt-3zTs_7LXH3Y',
+        title: 'FANUC Roboguide to Unity',
+        description: 'Bridging FANUC Roboguide simulations with Unity 3D for a real-time digital twin.',
+        gifUrl: 'https://i.ytimg.com/vi/3zTs_7LXH3Y/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/3zTs_7LXH3Y',
+        tags: ['Unity 3D', 'FANUC', 'Digital Twin'],
+        date: '2025-08-11'
+    },
+    {
+        id: 'yt-m4l9wxIvU98',
+        title: 'HoloLens 2 + ROS: AR Robot Control',
+        description: 'Controlling a Turtlebot with HoloLens 2 augmented reality and ROS integration.',
+        gifUrl: 'https://i.ytimg.com/vi/m4l9wxIvU98/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/m4l9wxIvU98',
+        tags: ['AR', 'HoloLens', 'ROS', 'Robotics'],
+        date: '2025-08-11'
+    },
+    {
+        id: 'yt-8DLa6tv0GCw',
+        title: 'VR Control of a Real FANUC Robot',
+        description: 'Controlling a physical FANUC industrial robot through a Virtual Reality digital twin interface.',
+        gifUrl: 'https://i.ytimg.com/vi/8DLa6tv0GCw/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/8DLa6tv0GCw',
+        tags: ['VR', 'Digital Twin', 'FANUC', 'Teleoperation'],
+        date: '2025-08-11'
+    },
+    {
+        id: 'yt-_0pQWwQOZT0',
+        title: 'Hybrid Simulation: Universal Robot in VR',
+        description: 'Hybrid physical-virtual simulation of a Universal Robot arm controlled through Virtual Reality.',
+        gifUrl: 'https://i.ytimg.com/vi/_0pQWwQOZT0/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/_0pQWwQOZT0',
+        tags: ['VR', 'Robotics', 'Simulation', 'Digital Twin'],
+        date: '2025-08-11'
+    },
+    {
+        id: 'yt-pjlTcweo_lg',
+        title: 'Remote Robotics Collaboration in VR',
+        description: 'The future of work — demonstrating remote expert collaboration for industrial robotics through immersive VR.',
+        gifUrl: 'https://i.ytimg.com/vi/pjlTcweo_lg/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/pjlTcweo_lg',
+        tags: ['VR', 'Teleoperation', 'Remote Work', 'HCI'],
+        date: '2025-08-11'
+    },
+    {
+        id: 'yt-rr5yVkSXkZw',
+        title: 'Controlling a Universal Robot from VR',
+        description: 'Real-time teleoperation of a Universal Robots arm using a Virtual Reality interface built in Unity.',
+        gifUrl: 'https://i.ytimg.com/vi/rr5yVkSXkZw/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/rr5yVkSXkZw',
+        tags: ['VR', 'Robotics', 'Unity 3D', 'Teleoperation'],
+        date: '2025-08-11'
+    },
+    {
+        id: 'yt-9upypT6OWwk',
+        title: 'Inverse Kinematics: Universal Robot in Unity',
+        description: 'Implementing Inverse Kinematics for a Universal Robot arm directly inside Unity 3D.',
+        gifUrl: 'https://i.ytimg.com/vi/9upypT6OWwk/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/9upypT6OWwk',
+        tags: ['Unity 3D', 'Robotics', 'Inverse Kinematics'],
+        date: '2022-11-05'
+    },
+    {
+        id: 'yt-ZlUxXn57M8Y',
+        title: 'Program Industrial Robots in Unity',
+        description: 'C# and Inverse Kinematics demo for programming and simulating industrial robots inside Unity 3D.',
+        gifUrl: 'https://i.ytimg.com/vi/ZlUxXn57M8Y/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/ZlUxXn57M8Y',
+        tags: ['Unity 3D', 'Robotics', 'C#', 'Inverse Kinematics'],
+        date: '2022-02-02'
     },
 ];
+
 
 const SORTED_EXPERIMENTS = [...EXPERIMENTS].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
@@ -51,32 +179,77 @@ interface ExperimentCardProps {
 
 const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSelectedImage }) => {
     const [isLoading, setIsLoading] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
 
-    const content = (
-        <>
-            {/* Media Container */}
-            <div
-                className={`relative w-full overflow-hidden bg-neutral-100 min-h-[200px] ${(!exp.youtubeUrl && !exp.linkUrl) ? 'cursor-pointer' : ''}`}
-                onClick={() => {
-                    if (!exp.youtubeUrl && !exp.linkUrl) {
-                        setSelectedImage(exp.gifUrl);
-                    }
-                }}
-            >
-                {isLoading && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-neutral-200/50 animate-pulse z-10 transition-opacity duration-300">
-                        <div className="w-8 h-8 rounded-full border-4 border-neutral-300 border-t-neutral-500 animate-spin"></div>
-                    </div>
-                )}
-                <img
-                    src={exp.gifUrl}
-                    alt={exp.title}
-                    className={`w-full h-auto object-cover transform transition-all duration-700 group-hover:scale-105 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-                    loading="lazy"
-                    onLoad={() => setIsLoading(false)}
-                />
+    // Extract YouTube video ID from youtubeUrl
+    const getYoutubeId = (url?: string): string | null => {
+        if (!url) return null;
+        const match = url.match(/youtu\.be\/([^?&]+)/) || url.match(/v=([^?&]+)/);
+        return match ? match[1] : null;
+    };
+    const youtubeId = getYoutubeId(exp.youtubeUrl);
 
-                {/* Overlay */}
+    const mediaSection = (
+        <div
+            className={`relative w-full overflow-hidden bg-neutral-100 min-h-[200px] ${(!exp.youtubeUrl && !exp.linkUrl) ? 'cursor-pointer' : ''}`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onClick={() => {
+                if (!exp.youtubeUrl && !exp.linkUrl) {
+                    setSelectedImage(exp.gifUrl);
+                }
+            }}
+        >
+            {/* Spinner while thumbnail loads */}
+            {isLoading && !isHovered && (
+                <div className="absolute inset-0 flex items-center justify-center bg-neutral-200/50 animate-pulse z-10">
+                    <div className="w-8 h-8 rounded-full border-4 border-neutral-300 border-t-neutral-500 animate-spin"></div>
+                </div>
+            )}
+
+            {/* Static thumbnail */}
+            <img
+                src={exp.gifUrl}
+                alt={exp.title}
+                className={`w-full h-auto object-cover transform transition-all duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'} ${isHovered && youtubeId ? 'opacity-0 scale-105' : 'scale-100'}`}
+                loading="lazy"
+                onLoad={() => setIsLoading(false)}
+            />
+
+            {/* YouTube iframe — fades in on hover */}
+            {youtubeId && (
+                <div className={`absolute inset-0 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                    {isHovered && (
+                        <>
+                            <iframe
+                                src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&loop=1&playlist=${youtubeId}&controls=0&modestbranding=1&rel=0&showinfo=0&disablekb=1&iv_load_policy=3`}
+                                className="absolute"
+                                style={{
+                                    width: '120%',
+                                    height: '120%',
+                                    top: '-10%',
+                                    left: '-10%',
+                                    border: 'none',
+                                    pointerEvents: 'none',
+                                }}
+                                allow="autoplay; encrypted-media"
+                                allowFullScreen={false}
+                                title={exp.title}
+                            />
+                            <a
+                                href={exp.youtubeUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="absolute inset-0 z-10 cursor-pointer"
+                                aria-label={`Watch ${exp.title} on YouTube`}
+                            />
+                        </>
+                    )}
+                </div>
+            )}
+
+            {/* Hover overlay (tags + title) — hidden when YouTube plays */}
+            {!isHovered && (
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
                     <div className="flex flex-wrap items-center gap-2 mb-3 z-20">
                         <span className="px-2.5 py-1 bg-blue-600/20 text-blue-100 text-[10px] uppercase tracking-widest font-bold rounded-md border border-blue-400/30">
@@ -93,28 +266,17 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
                         {exp.description}
                     </p>
                 </div>
-            </div>
-        </>
+            )}
+        </div>
     );
 
     return (
-        <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4, delay: globalIndex * 0.1 }}
-            className="w-full group relative rounded-2xl overflow-hidden bg-white border border-neutral-200/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
-        >
-            {(exp.youtubeUrl || exp.linkUrl) ? (
-                <a href={exp.youtubeUrl || exp.linkUrl} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
-                    {content}
-                </a>
-            ) : (
-                content
-            )}
-        </motion.div>
+        <div className="w-full group relative rounded-2xl overflow-hidden bg-white border border-neutral-200/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+            {mediaSection}
+        </div>
     );
 };
+
 
 const ExperimentsSection: React.FC = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);

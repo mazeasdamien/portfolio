@@ -23,3 +23,6 @@ certs/
 *.pem
 *.crt
 *.key
+
+# Ignore CV file/folder
+CV
