@@ -11,7 +11,7 @@ export const EducationSection: React.FC = () => {
                 <span className="h-px flex-grow bg-neutral-200"></span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+            <div className="grid grid-cols-1 gap-4 w-full">
                 {/* Ph.D. Diploma Card */}
                 <div className="relative group p-5 rounded-2xl border border-neutral-200 bg-white/60 backdrop-blur-md shadow-sm transition-all duration-300 flex items-center hover:border-neutral-300 hover:bg-white overflow-hidden">
                     <div className="flex items-center gap-4 w-full relative z-10">

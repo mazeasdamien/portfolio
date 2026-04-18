@@ -95,20 +95,26 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Content: CV & Education */}
-      <div className="relative z-20 flex flex-col gap-8 mt-4">
-        <div className="flex flex-col">
-          <div className="flex items-center gap-4 mb-4">
-            <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-800 flex-shrink-0">
-              Professional Experience
-            </h2>
-            <span className="h-px flex-grow bg-neutral-200"></span>
-          </div>
-          <CVSection />
-        </div>
+      {/* Main Content: CV & Education side-by-side */}
+      <div className="relative z-20 mt-4">
+        <div className="flex flex-col lg:flex-row gap-8 items-start">
 
-        <div className="flex flex-col">
-          <EducationSection />
+          {/* Left: Professional Experience */}
+          <div className="flex flex-col flex-1 min-w-0">
+            <div className="flex items-center gap-4 mb-4">
+              <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-800 flex-shrink-0">
+                Professional Experience
+              </h2>
+              <span className="h-px flex-grow bg-neutral-200"></span>
+            </div>
+            <CVSection />
+          </div>
+
+          {/* Right: Education */}
+          <div className="flex flex-col lg:w-[340px] xl:w-[380px] shrink-0">
+            <EducationSection />
+          </div>
+
         </div>
       </div>
 
