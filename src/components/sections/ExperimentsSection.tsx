@@ -331,7 +331,7 @@ const ExperimentsSection: React.FC = () => {
             {/* Header */}
             <div className="flex flex-col mb-16 max-w-3xl">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral-900 mb-6 drop-shadow-sm">
-                    Prototypes <span className="text-neutral-400 font-light">&</span> Archives
+                    Prototypes
                 </h2>
             </div>
 
