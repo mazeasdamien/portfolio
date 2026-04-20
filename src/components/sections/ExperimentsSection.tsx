@@ -329,10 +329,11 @@ const ExperimentsSection: React.FC = () => {
     return (
         <div className="flex flex-col mt-8 mb-8">
             {/* Header */}
-            <div className="flex flex-col mb-16 max-w-3xl">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral-900 mb-6 drop-shadow-sm">
+            <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-800 flex-shrink-0">
                     Prototypes
                 </h2>
+                <span className="h-px flex-grow bg-neutral-200"></span>
             </div>
 
             {/* Masonry Layout */}
