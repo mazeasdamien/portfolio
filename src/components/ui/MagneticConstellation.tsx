@@ -7,7 +7,7 @@ const VISIBLE_R = 400;
 const BEAT_FREQ = 1.2;
 const RIPPLE_DIST = 0.010;
 const DRIFT_SPEED = 0.005;
-const ROT_SPEED = 0.55;
+const ROT_SPEED = 0.06;
 const DRAG_SENS = 0.001;
 const BEAT_POS = 9;
 
