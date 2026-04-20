@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { CVSection } from '../components/sections/CVSection';
+
 import SEO from '../components/ui/SEO';
 import ExperimentsSection from '../components/sections/ExperimentsSection';
 import { GraduationCap } from 'lucide-react';
@@ -95,28 +95,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Content: CV & Education side-by-side */}
-      <div className="relative z-20 mt-4">
-        <div className="flex flex-col lg:flex-row gap-8 items-start">
 
-          {/* Left: Professional Experience */}
-          <div className="flex flex-col flex-1 min-w-0">
-            <div className="flex items-center gap-4 mb-4">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-800 flex-shrink-0">
-                Professional Experience
-              </h2>
-              <span className="h-px flex-grow bg-neutral-200"></span>
-            </div>
-            <CVSection />
-          </div>
-
-          {/* Right: Education */}
-          <div className="flex flex-col lg:w-[340px] xl:w-[380px] shrink-0">
-            <EducationSection />
-          </div>
-
-        </div>
-      </div>
 
       <div className="relative z-20 mt-8">
         <ExperimentsSection />
