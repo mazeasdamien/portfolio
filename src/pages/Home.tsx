@@ -14,7 +14,7 @@ const Home: React.FC = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   const seoData = {
-    title: "Damien Mazeas, PhD",
+    title: "Damien Mazeas",
     description: t('home.bio.description'),
     path: '/'
   };
@@ -51,19 +51,15 @@ const Home: React.FC = () => {
             {/* Identity */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left gap-3">
 
-              {/* Name + PhD */}
-              <h1 className="flex flex-col md:flex-row items-center md:items-baseline gap-1 md:gap-4 leading-none">
+              <h1 className="leading-none">
                 <span className="text-4xl md:text-6xl font-black tracking-tighter text-neutral-900">
                   Damien Mazeas
                 </span>
-                <span className="text-lg md:text-2xl font-light tracking-widest text-neutral-400">
-                  PhD
-                </span>
               </h1>
 
-              {/* Research interest chips */}
-              <div className="flex flex-wrap justify-center md:justify-start gap-1.5">
-                {['Virtual Worlds', 'Human-in-the-Loop', 'AI & Robotics', 'XR'].map(tag => (
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-1.5">
+                <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mr-0.5">Research Interests</span>
+                {['Virtual Worlds', 'AI & Robotics', 'XR'].map(tag => (
                   <span key={tag} className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-500 tracking-wide">
                     {tag}
                   </span>
@@ -97,11 +93,9 @@ const Home: React.FC = () => {
 
 
 
-      {/* Main Content: Professional Experience & Education side-by-side */}
       <div className="relative z-20 mt-4">
         <div className="flex flex-col lg:flex-row gap-8 items-start">
 
-          {/* Left: Professional Experience */}
           <div className="flex flex-col flex-1 min-w-0">
             <div className="flex items-center gap-4 mb-4">
               <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-800 flex-shrink-0">
@@ -112,7 +106,6 @@ const Home: React.FC = () => {
             <CVSection />
           </div>
 
-          {/* Right: Education */}
           <div className="flex flex-col lg:w-[340px] xl:w-[380px] shrink-0">
             <EducationSection />
           </div>

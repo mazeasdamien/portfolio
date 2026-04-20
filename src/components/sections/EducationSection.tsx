@@ -12,7 +12,6 @@ export const EducationSection: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-4 w-full">
-                {/* Ph.D. Diploma Card */}
                 <div className="relative group p-5 rounded-2xl border border-neutral-200 bg-white/60 backdrop-blur-md shadow-sm transition-all duration-300 flex items-center hover:border-neutral-300 hover:bg-white overflow-hidden">
                     <div className="flex items-center gap-4 w-full relative z-10">
                         <div className="w-14 h-14 rounded-xl bg-white/90 p-2 flex items-center justify-center shadow-sm shrink-0 overflow-hidden">
@@ -30,7 +29,6 @@ export const EducationSection: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Master's Diploma Card */}
                 <div className="relative group p-5 rounded-2xl border border-neutral-200 bg-white/60 backdrop-blur-md shadow-sm transition-all duration-300 flex items-center hover:border-neutral-300 hover:bg-white overflow-hidden">
                     <div className="flex items-center gap-4 w-full relative z-10">
                         <div className="w-14 h-14 rounded-xl bg-white/90 p-2 flex items-center justify-center shadow-sm shrink-0 overflow-hidden">

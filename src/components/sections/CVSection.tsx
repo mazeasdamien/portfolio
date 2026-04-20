@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
-// @ts-ignore
 import experienceData from '../../data/experience_steps.json';
 
 interface ExperienceStep {
@@ -50,7 +49,6 @@ const ExperienceNode: React.FC<{ step: ExperienceStep; index: number }> = ({ ste
             transition={{ duration: 0.35, delay: index * 0.06 }}
         >
             <div className="group flex items-center gap-4 px-5 py-3 rounded-2xl border border-neutral-200 bg-white/60 backdrop-blur-md shadow-sm transition-all duration-300 hover:border-neutral-300 hover:bg-white">
-                {/* Logo inside card */}
                 <div className="w-12 h-12 rounded-xl bg-white/90 p-1.5 flex items-center justify-center shadow-sm shrink-0 overflow-hidden border border-neutral-100">
                     {step.logo ? (
                         <img
@@ -67,7 +65,6 @@ const ExperienceNode: React.FC<{ step: ExperienceStep; index: number }> = ({ ste
                     )}
                 </div>
 
-                {/* Content */}
                 <div className="flex-1 min-w-0">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                         <div className="min-w-0">
@@ -91,7 +88,6 @@ const ExperienceNode: React.FC<{ step: ExperienceStep; index: number }> = ({ ste
                         </div>
                     </div>
 
-                    {/* Tags */}
                     {step.researchInterests.length > 0 && (
                         <div className="flex flex-wrap gap-1 mt-2">
                             {step.researchInterests.map((interest, i) => (

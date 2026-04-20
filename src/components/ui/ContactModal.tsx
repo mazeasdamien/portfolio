@@ -29,16 +29,13 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
     return createPortal(
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-            {/* Backdrop */}
             <div
                 className="absolute inset-0 bg-neutral-100/60 backdrop-blur-sm animate-fade-in"
                 onClick={onClose}
             />
 
-            {/* Modal Content */}
             <div className="relative w-full max-w-lg bg-white/95 backdrop-blur-xl border border-neutral-200 rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up">
 
-                {/* Header */}
                 <div className="p-6 border-b border-neutral-200 flex justify-between items-center bg-neutral-50">
                     <div>
                         <h2 className="text-2xl font-bold text-neutral-900">
@@ -54,7 +51,6 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                     </button>
                 </div>
 
-                {/* Body */}
                 <div className="p-6 flex flex-col gap-6">
 
                     <div className="flex items-center gap-2 p-1 bg-neutral-100 rounded-xl border border-neutral-200">
