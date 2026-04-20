@@ -1,46 +1,68 @@
-# Damien Mazeas Portfolio
+# Damien Mazeas — Portfolio
 
-Personal academic & research portfolio built with React + Vite + TypeScript + Tailwind CSS.
+Personal research & engineering portfolio built with **Vite + React + TypeScript + TailwindCSS**.
 
-## Tech Stack
-- **React 18** + **TypeScript**
-- **Vite** (dev server & build)
-- **Tailwind CSS** (utility-first styling)
-- **Framer Motion** (page transitions)
-- **Lucide React** (icons)
+## 🚀 Stack
 
-## Layout Overview
+| Layer | Technology |
+|-------|-----------|
+| Framework | React 18 + TypeScript |
+| Build tool | Vite 6 |
+| Styling | TailwindCSS + vanilla CSS |
+| Animations | Framer Motion |
+| Hosting | GitHub Pages / custom domain |
 
-### Home Page (`/`)
-| Column | Content |
-|--------|---------|
-| **Left (flex-1)** | Professional Experience — timeline cards with logos, tags and dates |
-| **Right (340–380 px)** | Education — Ph.D. (Cranfield) and M.Sc. (Arts et Métiers), stacked vertically |
+## 📁 Project Structure
 
-> On screens narrower than `lg` (1024 px) the two columns stack vertically.
+```
+src/
+├── components/
+│   ├── sections/
+│   │   ├── ExperimentsSection.tsx   # Prototypes & YouTube video gallery
+│   │   ├── EducationSection.tsx
+│   │   ├── CVSection.tsx
+│   │   └── SkillsCloud.tsx
+│   ├── layout/
+│   └── ui/
+├── data/
+├── pages/
+└── index.css
+```
 
-## Changelog
+## ✨ Features
 
-### 2026-04-18
-- **Layout**: Education section moved to the **right of Professional Experience** (two-column side-by-side layout on `lg+` screens, stacked on mobile).
-- Education cards changed to single-column stack inside the right panel.
+- **Hero section** — Research interests, links, and contact
+- **Professional Experience** — Timeline cards with logos and descriptions
+- **Education** — Degree timeline with institution logos
+- **Prototypes & Archives** — Masonry gallery with:
+  - YouTube videos: **hover-to-play** (autoplay muted, no controls, looped)
+  - **Title + date overlay** slides up from the bottom when hovering a YouTube video
+  - GIF/image cards: click-to-zoom modal
+  - Tag badges and date labels
+- **Skills Cloud** — Interactive tag display
+- **CV Section** — Inline PDF viewer / download
 
-### Earlier
-- Hero section with profile photo, research interest chips, and social links (LinkedIn, GitHub, Google Scholar).
-- Professional Experience section with organizational logos embedded in cards.
-- Experiments / YouTube video gallery with hover-to-play interaction.
-- Multi-language support via `LanguageContext`.
-- Contact modal.
+## 🎬 YouTube Hover Behavior
 
-## Running Locally
+When hovering a card that has an associated YouTube video:
+1. The thumbnail fades out and the video autoplays (muted, looped, no controls)
+2. A **frosted title banner** slides up from the bottom with the video title and date
+3. Clicking the card opens the YouTube video in a new tab
+
+## 📦 Dev
 
 ```bash
 npm install
-npm run dev
+npm run dev       # https://localhost:3000
+npm run build     # production bundle
 ```
 
-## Building for Production
+## 📝 Changelog
 
-```bash
-npm run build
-```
+| Date | Change |
+|------|--------|
+| 2026-04-20 | YouTube hover title banner: title + date now slide up from the bottom when hovering a YouTube card in the Experiments gallery |
+| 2026-04-18 | Hover-to-play YouTube integration in Experiments section (autoplay muted, loop, no controls) |
+| 2026-04-18 | Education section placed to the right of Professional Experience |
+| 2026-04-17 | Full portfolio modernization with Framer Motion animations |
+| 2026-04-17 | Masonry layout for Prototypes & Archives section |

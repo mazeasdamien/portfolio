@@ -364,4 +364,15 @@ body {
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 

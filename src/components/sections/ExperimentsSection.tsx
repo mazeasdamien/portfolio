@@ -248,7 +248,7 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
                 </div>
             )}
 
-            {/* Hover overlay (tags + title) — hidden when YouTube plays */}
+            {/* Hover overlay (tags + title) — shown when not YouTube hover */}
             {!isHovered && (
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
                     <div className="flex flex-wrap items-center gap-2 mb-3 z-20">
@@ -265,6 +265,25 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
                     <p className="text-neutral-200 text-xs font-medium leading-relaxed line-clamp-3 z-20">
                         {exp.description}
                     </p>
+                </div>
+            )}
+
+            {/* YouTube hover: title badge slides up from bottom */}
+            {isHovered && youtubeId && (
+                <div
+                    className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none"
+                    style={{
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)',
+                        padding: '2.5rem 1.25rem 1rem',
+                        animation: 'slideUpFadeIn 0.3s ease-out both',
+                    }}
+                >
+                    <p className="text-white/60 text-[10px] uppercase tracking-widest font-semibold mb-1">
+                        {new Date(exp.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                    </p>
+                    <h3 className="text-white font-bold text-base leading-snug drop-shadow-lg">
+                        {exp.title}
+                    </h3>
                 </div>
             )}
         </div>
