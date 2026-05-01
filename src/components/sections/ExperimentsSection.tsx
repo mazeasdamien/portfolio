@@ -24,6 +24,15 @@ const EXPERIMENTS: Experiment[] = [
         date: '2026-05-01'
     },
     {
+        id: 'github-ik-ur16e',
+        title: 'Inverse-Kinematics-Universal-Robot-Unity',
+        description: 'Inverse Kinematics for UR16e Robot in unity.',
+        gifUrl: 'https://opengraph.githubassets.com/1/mazeasdamien/Inverse-Kinematics-Universal-Robot-Unity',
+        linkUrl: 'https://github.com/mazeasdamien/Inverse-Kinematics-Universal-Robot-Unity',
+        tags: ['Unity 3D', 'Robotics', 'C#', 'Open Source'],
+        date: '2023-04-01'
+    },
+    {
         id: 'yt-Z_F308DV2rU',
         title: 'Semantic-to-Motion Digital Twin Framework',
         description: 'A hierarchical framework translating natural language prompts into expressive robotic trajectories using Vision-Language Models.',
@@ -200,7 +209,7 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
 
     const mediaSection = (
         <div
-            className={`relative w-full overflow-hidden bg-neutral-100 min-h-[200px] ${(!exp.youtubeUrl && !exp.linkUrl) ? 'cursor-pointer' : ''}`}
+            className={`relative w-full aspect-video overflow-hidden bg-neutral-100 ${(!exp.youtubeUrl && !exp.linkUrl) ? 'cursor-pointer' : ''}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={() => {
@@ -220,7 +229,7 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
             <img
                 src={exp.gifUrl}
                 alt={exp.title}
-                className={`w-full h-auto object-cover transform transition-all duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'} ${isHovered && youtubeId ? 'opacity-0 scale-105' : 'scale-100'}`}
+                className={`w-full h-full object-cover transform transition-all duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'} ${isHovered && youtubeId ? 'opacity-0 scale-105' : 'scale-100'}`}
                 loading="lazy"
                 onLoad={() => setIsLoading(false)}
             />
@@ -257,8 +266,19 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
                 </div>
             )}
 
+            {/* Link overlay for non-YouTube external links */}
+            {exp.linkUrl && !youtubeId && (
+                <a
+                    href={exp.linkUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute inset-0 z-10 cursor-pointer"
+                    aria-label={`Visit ${exp.title}`}
+                />
+            )}
+
             {/* Hover overlay (tags + title) — shown when not YouTube hover */}
-            {!isHovered && (
+            {(!isHovered || !youtubeId) && (
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
                     <div className="flex flex-wrap items-center gap-2 mb-3 z-20">
                         <span className="px-2.5 py-1 bg-blue-600/20 text-blue-100 text-[10px] uppercase tracking-widest font-bold rounded-md border border-blue-400/30">
