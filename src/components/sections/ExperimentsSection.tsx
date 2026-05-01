@@ -11,6 +11,7 @@ interface Experiment {
     linkUrl?: string;
     tags: string[];
     date: string; // ISO format: YYYY-MM-DD
+    hideMeta?: boolean;
 }
 
 const EXPERIMENTS: Experiment[] = [
@@ -30,7 +31,8 @@ const EXPERIMENTS: Experiment[] = [
         gifUrl: 'https://opengraph.githubassets.com/1/mazeasdamien/Inverse-Kinematics-Universal-Robot-Unity',
         linkUrl: 'https://github.com/mazeasdamien/Inverse-Kinematics-Universal-Robot-Unity',
         tags: ['Unity 3D', 'Robotics', 'C#', 'Open Source'],
-        date: '2023-04-01'
+        date: '2023-04-01',
+        hideMeta: true
     },
     {
         id: 'yt-Z_F308DV2rU',
@@ -209,7 +211,7 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
 
     const mediaSection = (
         <div
-            className={`relative w-full aspect-video overflow-hidden bg-neutral-100 ${(!exp.youtubeUrl && !exp.linkUrl) ? 'cursor-pointer' : ''}`}
+            className={`relative w-full overflow-hidden bg-neutral-100 ${youtubeId ? 'aspect-video' : 'min-h-[200px]'} ${(!exp.youtubeUrl && !exp.linkUrl) ? 'cursor-pointer' : ''}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={() => {
@@ -229,7 +231,7 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
             <img
                 src={exp.gifUrl}
                 alt={exp.title}
-                className={`w-full h-full object-cover transform transition-all duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'} ${isHovered && youtubeId ? 'opacity-0 scale-105' : 'scale-100'}`}
+                className={`w-full ${youtubeId ? 'h-full' : 'h-auto'} object-cover transform transition-all duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'} ${isHovered && youtubeId ? 'opacity-0 scale-105' : 'scale-100'}`}
                 loading="lazy"
                 onLoad={() => setIsLoading(false)}
             />
@@ -280,16 +282,18 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
             {/* Hover overlay (tags + title) — shown when not YouTube hover */}
             {(!isHovered || !youtubeId) && (
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-                    <div className="flex flex-wrap items-center gap-2 mb-3 z-20">
-                        <span className="px-2.5 py-1 bg-blue-600/20 text-blue-100 text-[10px] uppercase tracking-widest font-bold rounded-md border border-blue-400/30">
-                            {new Date(exp.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                        </span>
-                        {exp.tags.map(tag => (
-                            <span key={tag} className="px-2.5 py-1 backdrop-blur-md bg-white/10 text-white text-[10px] uppercase tracking-widest font-bold rounded-md border border-white/20">
-                                {tag}
+                    {!exp.hideMeta && (
+                        <div className="flex flex-wrap items-center gap-2 mb-3 z-20">
+                            <span className="px-2.5 py-1 bg-blue-600/20 text-blue-100 text-[10px] uppercase tracking-widest font-bold rounded-md border border-blue-400/30">
+                                {new Date(exp.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                             </span>
-                        ))}
-                    </div>
+                            {exp.tags.map(tag => (
+                                <span key={tag} className="px-2.5 py-1 backdrop-blur-md bg-white/10 text-white text-[10px] uppercase tracking-widest font-bold rounded-md border border-white/20">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    )}
                     <h3 className="text-white font-bold text-lg leading-tight mb-1 z-20">{exp.title}</h3>
                     <p className="text-neutral-200 text-xs font-medium leading-relaxed line-clamp-3 z-20">
                         {exp.description}
