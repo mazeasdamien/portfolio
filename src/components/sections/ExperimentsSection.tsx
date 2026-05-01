@@ -15,6 +15,15 @@ interface Experiment {
 
 const EXPERIMENTS: Experiment[] = [
     {
+        id: 'yt-q1DMvdakKb4',
+        title: 'Testing Vision–Language Model (VLM) to Unity 6',
+        description: 'Exploring the integration of a Vision-Language Model (VLM) within Unity 6.',
+        gifUrl: 'https://i.ytimg.com/vi/q1DMvdakKb4/hqdefault.jpg',
+        youtubeUrl: 'https://youtu.be/q1DMvdakKb4',
+        tags: ['Unity 6', 'VLM', 'AI', 'Integration'],
+        date: '2026-05-01'
+    },
+    {
         id: 'yt-Z_F308DV2rU',
         title: 'Semantic-to-Motion Digital Twin Framework',
         description: 'A hierarchical framework translating natural language prompts into expressive robotic trajectories using Vision-Language Models.',
