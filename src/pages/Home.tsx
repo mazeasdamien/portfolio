@@ -135,7 +135,7 @@ const Home: React.FC = () => {
           <div className="flex flex-col flex-1 min-w-0">
             <div className="flex items-center gap-4 mb-4">
               <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-800 flex-shrink-0">
-                Professional Experience
+                Experience
               </h2>
               <span className="h-px flex-grow bg-neutral-200"></span>
             </div>
