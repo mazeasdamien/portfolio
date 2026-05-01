@@ -14,6 +14,7 @@ interface ExperienceStep {
     endDate: string | null;
     researchInterests: string[];
     logo: string;
+    description?: string | string[];
 }
 
 const STEPS = [...experienceData]
@@ -88,15 +89,20 @@ const ExperienceNode: React.FC<{ step: ExperienceStep; index: number }> = ({ ste
                         </div>
                     </div>
 
-                    {step.researchInterests.length > 0 && (
-                        <div className="flex flex-wrap gap-1 mt-2">
-                            {step.researchInterests.map((interest, i) => (
-                                <span key={i} className="text-[9px] font-bold px-2 py-0.5 rounded-md bg-neutral-100 border border-neutral-200 text-neutral-600 uppercase tracking-wider">
-                                    {interest}
-                                </span>
-                            ))}
+                    {step.description && (
+                        <div className="text-[12px] text-neutral-600 leading-relaxed mt-2.5">
+                            {Array.isArray(step.description) ? (
+                                <ul className="list-disc pl-4 space-y-1">
+                                    {step.description.map((item, i) => (
+                                        <li key={i}>{item}</li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p>{step.description}</p>
+                            )}
                         </div>
                     )}
+
                 </div>
             </div>
         </motion.div>

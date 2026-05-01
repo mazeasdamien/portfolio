@@ -28,6 +28,7 @@ const AppRoutes = () => {
             <div className="flex-grow">
               <Suspense fallback={null}>
                 <AnimatePresence mode="wait">
+                  {/* @ts-ignore - key is required by AnimatePresence for route transitions */}
                   <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<Home />} />
                   </Routes>

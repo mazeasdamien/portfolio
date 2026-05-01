@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 interface Experiment {
     id: string;
     title: string;
@@ -190,6 +190,91 @@ const EXPERIMENTS: Experiment[] = [
 
 const SORTED_EXPERIMENTS = [...EXPERIMENTS].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
+declare global {
+    interface Window {
+        YT: any;
+        onYouTubeIframeAPIReady: () => void;
+    }
+}
+
+const YouTubeHoverPlayer = ({ youtubeId, isHovered }: { youtubeId: string, isHovered: boolean }) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const playerRef = useRef<any>(null);
+
+    useEffect(() => {
+        const initPlayer = () => {
+            if (!containerRef.current || playerRef.current) return;
+            playerRef.current = new window.YT.Player(containerRef.current, {
+                videoId: youtubeId,
+                playerVars: {
+                    autoplay: isHovered ? 1 : 0,
+                    controls: 0,
+                    disablekb: 1,
+                    fs: 0,
+                    modestbranding: 1,
+                    playsinline: 1,
+                    rel: 0,
+                    mute: 1,
+                    iv_load_policy: 3
+                },
+                events: {
+                    onReady: (event: any) => {
+                        event.target.mute();
+                        if (isHovered) {
+                            event.target.playVideo();
+                        }
+                    },
+                    onStateChange: (event: any) => {
+                        if (event.data === 0) { // ENDED
+                            event.target.seekTo(0);
+                            event.target.playVideo();
+                        }
+                    }
+                }
+            });
+        };
+
+        if (window.YT && window.YT.Player) {
+            initPlayer();
+        } else {
+            if (!document.getElementById('youtube-api-script')) {
+                const tag = document.createElement('script');
+                tag.id = 'youtube-api-script';
+                tag.src = 'https://www.youtube.com/iframe_api';
+                const firstScriptTag = document.getElementsByTagName('script')[0];
+                if (firstScriptTag && firstScriptTag.parentNode) {
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                } else {
+                    document.head.appendChild(tag);
+                }
+                
+                window.onYouTubeIframeAPIReady = () => {
+                    window.dispatchEvent(new Event('youtube-api-ready'));
+                };
+            }
+            const listener = () => initPlayer();
+            window.addEventListener('youtube-api-ready', listener);
+            return () => window.removeEventListener('youtube-api-ready', listener);
+        }
+    }, [youtubeId]);
+
+    useEffect(() => {
+        if (playerRef.current && typeof playerRef.current.playVideo === 'function') {
+            if (isHovered) {
+                playerRef.current.playVideo();
+            } else {
+                playerRef.current.pauseVideo();
+            }
+        }
+    }, [isHovered]);
+
+    return (
+        <div className="absolute w-[120%] h-[120%] top-[-10%] left-[-10%] pointer-events-none">
+            <div ref={containerRef} className="w-full h-full pointer-events-none" />
+        </div>
+    );
+};
+
 interface ExperimentCardProps {
     exp: Experiment;
     globalIndex: number;
@@ -198,6 +283,12 @@ interface ExperimentCardProps {
 const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
+    const [hasHovered, setHasHovered] = useState(false);
+
+    useEffect(() => {
+        if (isHovered) setHasHovered(true);
+    }, [isHovered]);
+    const canvasRef = useRef<HTMLCanvasElement>(null);
 
     // Extract YouTube video ID from youtubeUrl
     const getYoutubeId = (url?: string): string | null => {
@@ -212,7 +303,7 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex }) => 
 
     const mediaSection = (
         <div
-            className={`relative w-full overflow-hidden bg-neutral-100 ${use16x9 ? 'aspect-video' : 'min-h-[200px]'}`}
+            className={`relative w-full overflow-hidden bg-transparent ${use16x9 ? 'aspect-video' : 'min-h-[200px]'}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -223,44 +314,41 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex }) => 
                 </div>
             )}
 
-            {/* Static thumbnail */}
+            {/* Static frame canvas for GIFs */}
+            <canvas
+                ref={canvasRef}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 pointer-events-none ${(!exp.gifUrl.endsWith('.gif') || isLoading) ? 'hidden' : ''} ${isHovered ? 'opacity-0' : 'opacity-100'}`}
+            />
+
+            {/* Main Image / Animated GIF */}
             <img
                 src={exp.gifUrl}
                 alt={exp.title}
-                className={`w-full ${use16x9 ? 'h-full' : 'h-auto'} object-cover transform transition-all duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'} ${isHovered && youtubeId ? 'opacity-0 scale-105' : 'scale-100'}`}
+                className={`w-full ${use16x9 ? 'h-full' : 'h-auto'} object-cover transition-all duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'} ${(isHovered && youtubeId) || (!isHovered && exp.gifUrl.endsWith('.gif')) ? 'opacity-0' : 'opacity-100'}`}
                 loading="lazy"
-                onLoad={() => setIsLoading(false)}
+                crossOrigin="anonymous"
+                onLoad={(e) => {
+                    setIsLoading(false);
+                    if (exp.gifUrl.endsWith('.gif') && canvasRef.current) {
+                        const img = e.currentTarget;
+                        canvasRef.current.width = img.naturalWidth;
+                        canvasRef.current.height = img.naturalHeight;
+                        canvasRef.current.getContext('2d')?.drawImage(img, 0, 0);
+                    }
+                }}
             />
 
-            {/* YouTube iframe — fades in on hover */}
-            {youtubeId && (
+            {/* YouTube iframe — loaded via API on first hover */}
+            {youtubeId && hasHovered && (
                 <div className={`absolute inset-0 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                    {isHovered && (
-                        <>
-                            <iframe
-                                src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&loop=1&playlist=${youtubeId}&controls=0&modestbranding=1&rel=0&showinfo=0&disablekb=1&iv_load_policy=3`}
-                                className="absolute"
-                                style={{
-                                    width: '120%',
-                                    height: '120%',
-                                    top: '-10%',
-                                    left: '-10%',
-                                    border: 'none',
-                                    pointerEvents: 'none',
-                                }}
-                                allow="autoplay; encrypted-media"
-                                allowFullScreen={false}
-                                title={exp.title}
-                            />
-                            <a
-                                href={exp.youtubeUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="absolute inset-0 z-10 cursor-pointer"
-                                aria-label={`Watch ${exp.title} on YouTube`}
-                            />
-                        </>
-                    )}
+                    <YouTubeHoverPlayer youtubeId={youtubeId} isHovered={isHovered} />
+                    <a
+                        href={exp.youtubeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 z-10 cursor-pointer"
+                        aria-label={`Watch ${exp.title} on YouTube`}
+                    />
                 </div>
             )}
 
@@ -319,8 +407,27 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex }) => 
     );
 
     return (
-        <div className="w-full group relative rounded-2xl overflow-hidden bg-white border border-neutral-200/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
-            {mediaSection}
+        <div className="w-full relative group">
+            {/* Outer offset outline (Static, revealed when card pops out) */}
+            <div className="absolute inset-0 rounded-[16px] border-[1.5px] border-neutral-400 transition-opacity duration-500 ease-out opacity-0 group-hover:opacity-100 group-hover:shadow-md pointer-events-none z-0"></div>
+            
+            {/* Intermediate offset outline (Translates half the distance) */}
+            <div className="absolute inset-0 rounded-[16px] border-[1.5px] border-neutral-400 transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 group-hover:-translate-x-[6px] group-hover:-translate-y-[6px] group-hover:shadow-md pointer-events-none z-0"></div>
+            
+            {/* Corner Connecting Lines Container (Static) */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                {/* Top-Right connection */}
+                <div className="absolute w-[17px] h-[1.5px] bg-neutral-400 rounded-full transition-transform duration-500 ease-out origin-left -rotate-[135deg] scale-x-0 group-hover:scale-x-100" style={{ top: '5.5px', left: 'calc(100% - 5.5px)', marginTop: '-0.75px' }}></div>
+                {/* Bottom-Left connection */}
+                <div className="absolute w-[17px] h-[1.5px] bg-neutral-400 rounded-full transition-transform duration-500 ease-out origin-left -rotate-[135deg] scale-x-0 group-hover:scale-x-100" style={{ top: 'calc(100% - 5.5px)', left: '5.5px', marginTop: '-0.75px' }}></div>
+                {/* Bottom-Right connection */}
+                <div className="absolute w-[17px] h-[1.5px] bg-neutral-400 rounded-full transition-transform duration-500 ease-out origin-left -rotate-[135deg] scale-x-0 group-hover:scale-x-100" style={{ top: 'calc(100% - 5.5px)', left: 'calc(100% - 5.5px)', marginTop: '-0.75px' }}></div>
+            </div>
+
+            {/* Main Card */}
+            <div className="relative z-10 w-full rounded-[16px] overflow-hidden bg-[#fafafa] border border-neutral-200/60 shadow-sm transition-all duration-500 ease-out group-hover:-translate-x-[12px] group-hover:-translate-y-[12px] group-hover:border-black group-hover:shadow-2xl">
+                {mediaSection}
+            </div>
         </div>
     );
 };
@@ -359,7 +466,7 @@ const ExperimentsSection: React.FC = () => {
             {/* Header */}
             <div className="flex items-center gap-4 mb-8">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-800 flex-shrink-0">
-                    Prototypes
+                    Experiments
                 </h2>
                 <span className="h-px flex-grow bg-neutral-200"></span>
             </div>

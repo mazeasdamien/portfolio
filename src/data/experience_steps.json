@@ -25,26 +25,6 @@
         ],
         "logo": "/images/logos/artsetmetiers.svg"
     },
-
-    {
-        "id": "exp-tumcreate",
-        "type": "employment",
-        "title": "Research Assistant",
-        "organization": "TUMCREATE",
-        "location": "Singapore",
-        "startDate": "2019-02-01",
-        "endDate": "2019-08-01",
-        "description": "Conducted applied research on VR immersive prototyping tools for industrial designers.",
-        "researchInterests": [
-            "VR Prototyping",
-            "Industrial Design",
-            "Human Factors"
-        ],
-        "publications": [],
-        "teaching": [],
-        "projects": [],
-        "logo": "/images/logos/tumcreate.png"
-    },
     {
         "id": "exp-cranfield",
         "type": "education",
@@ -122,7 +102,10 @@
         "location": "Singapore",
         "startDate": "2023-10-01",
         "endDate": "2024-09-30",
-        "description": "Cognitive Ergonomics & Eye-Tracking: Conducted rigorous empirical user studies (N=30) investigating the impact of exocentric visual aids on operator visuomotor expertise, uncovering critical preference-performance dissociations via physiological sensing (Tobii eye-tracking, pupillometry) and NASA-TLX.",
+        "description": [
+            "Designed and evaluated XR interfaces for human-drone interaction in search and rescue context",
+            "Developed pupillometry-based cognitive workload measurement protocol"
+        ],
         "researchInterests": [
             "User Interface Design",
             "Human Factors",
@@ -135,16 +118,17 @@
     {
         "id": "exp-bnbu",
         "type": "employment",
-        "title": "Lecturer in Human-Computer Interaction",
+        "title": "Lecturer",
         "organization": "BNBU",
         "location": "Zhuhai, China",
         "startDate": "2024-09-01",
         "endDate": "2025-08-31",
-        "description": "",
-        "highlights": [
-            "Course Design: Created and taught the Human-Computer Interaction syllabus.",
-            "Teaching: 135h per semester. Topics: HCI, General IT, Computer Technology & AI projects."
+        "description": [
+            "Created the Human-Computer Interaction course from scratch for the university",
+            "Delivered 3 modules (135 h/semester, ~200 students)",
+            "Student satisfaction: 4.67/5"
         ],
+        "highlights": [],
         "researchInterests": [
             "Syllabus Creation",
             "AI Education"
@@ -181,10 +165,11 @@
         "location": "Rennes, France",
         "startDate": "2026-01-01",
         "endDate": null,
-        "description": "Engineered a hierarchical Vision-Language-Model (VLM/LLM) digital twin framework to translate natural language prompts into expressive robotic trajectories. Focus on the [5GMetaverse project](https://5gmetaverse.wp.imt.fr/).",
-        "highlights": [
-            "Co-authored 1 patent."
+        "description": [
+            "VLM/LLM digital twin framework translating natural language to robotic trajectories, enabling non-experts to intuitively control robots using everyday language",
+            "Co-authored 1 patent (submitted)"
         ],
+        "highlights": [],
         "researchInterests": [
             "Social XR",
             "Industrial Metaverse",
