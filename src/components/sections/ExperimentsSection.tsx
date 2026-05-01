@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
-
 interface Experiment {
     id: string;
     title: string;
@@ -196,10 +193,9 @@ const SORTED_EXPERIMENTS = [...EXPERIMENTS].sort((a, b) => new Date(b.date).getT
 interface ExperimentCardProps {
     exp: Experiment;
     globalIndex: number;
-    setSelectedImage: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSelectedImage }) => {
+const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -216,14 +212,9 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
 
     const mediaSection = (
         <div
-            className={`relative w-full overflow-hidden bg-neutral-100 ${use16x9 ? 'aspect-video' : 'min-h-[200px]'} ${(!exp.youtubeUrl && !exp.linkUrl) ? 'cursor-pointer' : ''}`}
+            className={`relative w-full overflow-hidden bg-neutral-100 ${use16x9 ? 'aspect-video' : 'min-h-[200px]'}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            onClick={() => {
-                if (!exp.youtubeUrl && !exp.linkUrl) {
-                    setSelectedImage(exp.gifUrl);
-                }
-            }}
         >
             {/* Spinner while thumbnail loads */}
             {isLoading && !isHovered && (
@@ -336,7 +327,6 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
 
 
 const ExperimentsSection: React.FC = () => {
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [columns, setColumns] = useState(() => {
         if (typeof window !== 'undefined') {
             if (window.innerWidth >= 1024) return 3;
@@ -385,7 +375,6 @@ const ExperimentsSection: React.FC = () => {
                                     key={exp.id} 
                                     exp={exp} 
                                     globalIndex={globalIndex} 
-                                    setSelectedImage={setSelectedImage} 
                                 />
                             );
                         })}
@@ -393,35 +382,6 @@ const ExperimentsSection: React.FC = () => {
                 ))}
             </div>
 
-            {/* Full Screen Image Zoom Modal */}
-            <AnimatePresence>
-                {selectedImage && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm cursor-pointer"
-                        onClick={() => setSelectedImage(null)}
-                    >
-                        <button
-                            onClick={() => setSelectedImage(null)}
-                            className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-50 p-2"
-                        >
-                            <X size={32} />
-                        </button>
-                        <motion.img
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            src={selectedImage}
-                            alt="Expanded view"
-                            className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
-                            onClick={(e) => e.stopPropagation()}
-                        />
-                    </motion.div>
-                )}
-            </AnimatePresence>
         </div>
     );
 };

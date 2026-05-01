@@ -6,7 +6,6 @@ import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { uiTranslations } from './utils/translations';
-import MagneticConstellation from './components/ui/MagneticConstellation';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -22,7 +21,7 @@ const AppRoutes = () => {
   return (
     <>
       <ScrollToTop />
-      <MagneticConstellation />
+
       <div className="flex flex-col min-h-screen font-sans selection:bg-neutral-800 selection:text-neutral-100 relative bg-transparent text-neutral-800 transition-colors duration-300 overflow-x-hidden">
         <div className="relative z-10 flex flex-col min-h-screen">
           <div className="flex-grow flex flex-col relative overflow-hidden">
