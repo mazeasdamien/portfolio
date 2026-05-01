@@ -51,7 +51,8 @@ const EXPERIMENTS: Experiment[] = [
         gifUrl: '/Prototypes/elastic grid 2.gif',
         youtubeUrl: 'https://youtu.be/KQpWBGlAK90',
         tags: ['Unity 3D', 'Physics', 'Simulation'],
-        date: '2026-03-20'
+        date: '2026-03-20',
+        isShort: true
     },
     {
         id: 'exp-elastic-grid',
