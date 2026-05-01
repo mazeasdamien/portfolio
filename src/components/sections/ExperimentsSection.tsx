@@ -12,6 +12,7 @@ interface Experiment {
     tags: string[];
     date: string; // ISO format: YYYY-MM-DD
     hideMeta?: boolean;
+    isShort?: boolean;
 }
 
 const EXPERIMENTS: Experiment[] = [
@@ -94,7 +95,8 @@ const EXPERIMENTS: Experiment[] = [
         gifUrl: 'https://i.ytimg.com/vi/FDd-eLMpXmE/hqdefault.jpg',
         youtubeUrl: 'https://youtu.be/FDd-eLMpXmE',
         tags: ['Blender', 'Tutorial', '3D'],
-        date: '2025-10-10'
+        date: '2025-10-10',
+        isShort: true
     },
     {
         id: 'yt-Yl22YEUcAQw',
@@ -208,10 +210,13 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
         return match ? match[1] : null;
     };
     const youtubeId = getYoutubeId(exp.youtubeUrl);
+    
+    const isShortVideo = exp.isShort || (exp.youtubeUrl && exp.youtubeUrl.includes('shorts'));
+    const use16x9 = youtubeId && !isShortVideo;
 
     const mediaSection = (
         <div
-            className={`relative w-full overflow-hidden bg-neutral-100 ${youtubeId ? 'aspect-video' : 'min-h-[200px]'} ${(!exp.youtubeUrl && !exp.linkUrl) ? 'cursor-pointer' : ''}`}
+            className={`relative w-full overflow-hidden bg-neutral-100 ${use16x9 ? 'aspect-video' : 'min-h-[200px]'} ${(!exp.youtubeUrl && !exp.linkUrl) ? 'cursor-pointer' : ''}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={() => {
@@ -231,7 +236,7 @@ const ExperimentCard: React.FC<ExperimentCardProps> = ({ exp, globalIndex, setSe
             <img
                 src={exp.gifUrl}
                 alt={exp.title}
-                className={`w-full ${youtubeId ? 'h-full' : 'h-auto'} object-cover transform transition-all duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'} ${isHovered && youtubeId ? 'opacity-0 scale-105' : 'scale-100'}`}
+                className={`w-full ${use16x9 ? 'h-full' : 'h-auto'} object-cover transform transition-all duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'} ${isHovered && youtubeId ? 'opacity-0 scale-105' : 'scale-100'}`}
                 loading="lazy"
                 onLoad={() => setIsLoading(false)}
             />
