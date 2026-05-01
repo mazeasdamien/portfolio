@@ -96,8 +96,7 @@ const EXPERIMENTS: Experiment[] = [
         gifUrl: 'https://i.ytimg.com/vi/FDd-eLMpXmE/hqdefault.jpg',
         youtubeUrl: 'https://youtu.be/FDd-eLMpXmE',
         tags: ['Blender', 'Tutorial', '3D'],
-        date: '2025-10-10',
-        isShort: true
+        date: '2025-10-10'
     },
     {
         id: 'yt-Yl22YEUcAQw',
