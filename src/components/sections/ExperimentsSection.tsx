@@ -464,12 +464,15 @@ const ExperimentsSection: React.FC = () => {
     return (
         <div className="flex flex-col mt-8 mb-8">
             {/* Header */}
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-2">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-800 flex-shrink-0">
                     Experiments
                 </h2>
                 <span className="h-px flex-grow bg-neutral-200"></span>
             </div>
+            <p className="text-xs text-neutral-400 mb-8 italic">
+                * Note: Experiment videos are hosted on YouTube and may not work in some regions without a VPN.
+            </p>
 
             {/* Masonry Layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
